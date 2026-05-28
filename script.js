@@ -1,81 +1,85 @@
 # script.js
 
-```javascript id="s3w9qn"
+```javascript id="w4m8rz"
+// ====================================
 // ESPERAR CARGA COMPLETA
+// ====================================
 
-document.addEventListener("DOMContentLoaded", function(){
+window.onload = function(){
 
+// ====================================
 // ELEMENTOS
-
-const toggleButton = document.getElementById("theme-toggle");
+// ====================================
 
 const body = document.body;
 
-const mainLogo = document.getElementById("logo");
+const toggleButton = document.getElementById("theme-toggle");
+
+const logo = document.getElementById("logo");
 
 const footerLogo = document.getElementById("footer-logo");
 
-/* =========================
-   FUNCION APLICAR TEMA
-========================= */
+// ====================================
+// ACTIVAR DARK MODE
+// ====================================
 
-function applyTheme(theme){
-
-// LIGHT MODE
-
-if(theme === "light"){
-
-body.classList.add("light-mode");
-
-toggleButton.innerHTML = "☀️";
-
-mainLogo.src = "img/logo-light.png";
-
-footerLogo.src = "img/logo-light.png";
-
-}
-
-// DARK MODE
-
-else{
+function darkMode(){
 
 body.classList.remove("light-mode");
 
 toggleButton.innerHTML = "🌙";
 
-mainLogo.src = "img/logo-dark.png";
+logo.src = "img/logo-dark.png";
 
 footerLogo.src = "img/logo-dark.png";
 
-}
+localStorage.setItem("theme","dark");
 
 }
 
-/* =========================
-   CARGAR TEMA GUARDADO
-========================= */
+// ====================================
+// ACTIVAR LIGHT MODE
+// ====================================
+
+function lightMode(){
+
+body.classList.add("light-mode");
+
+toggleButton.innerHTML = "☀️";
+
+logo.src = "img/logo-light.png";
+
+footerLogo.src = "img/logo-light.png";
+
+localStorage.setItem("theme","light");
+
+}
+
+// ====================================
+// CARGAR TEMA GUARDADO
+// ====================================
 
 const savedTheme = localStorage.getItem("theme");
 
-// SI EXISTE
+// SI EL TEMA ES LIGHT
 
-if(savedTheme){
+if(savedTheme === "light"){
 
-applyTheme(savedTheme);
+lightMode();
 
 }
 
-// SI NO EXISTE
+// SI NO EXISTE O ES DARK
 
 else{
 
-applyTheme("dark");
+darkMode();
 
 }
 
-/* =========================
-   BOTON CAMBIO TEMA
-========================= */
+// ====================================
+// BOTON CAMBIO TEMA
+// ====================================
 
 toggleButton.addEventListener("click", function(){
 
@@ -83,9 +87,7 @@ toggleButton.addEventListener("click", function(){
 
 if(body.classList.contains("light-mode")){
 
-applyTheme("dark");
-
-localStorage.setItem("theme", "dark");
+darkMode();
 
 }
 
@@ -93,13 +95,11 @@ localStorage.setItem("theme", "dark");
 
 else{
 
-applyTheme("light");
-
-localStorage.setItem("theme", "light");
+lightMode();
 
 }
 
 });
 
-});
+};
 ```
