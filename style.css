@@ -1,6 +1,6 @@
 # style.css
 
-```css id="a7k9rx"
+```css
 *{
 margin:0;
 padding:0;
@@ -71,7 +71,7 @@ border-radius:50%;
 display:block;
 }
 
-/* NAV */
+/* MENU */
 
 nav{
 display:flex;
@@ -108,6 +108,79 @@ transition:0.3s;
 
 nav a:hover::after{
 width:100%;
+}
+
+/* SWITCH */
+
+.theme-switch{
+display:flex;
+align-items:center;
+gap:12px;
+}
+
+.mode-text{
+font-size:20px;
+}
+
+.switch{
+position:relative;
+display:inline-block;
+width:64px;
+height:34px;
+}
+
+.switch input{
+opacity:0;
+width:0;
+height:0;
+}
+
+.slider{
+position:absolute;
+cursor:pointer;
+
+top:0;
+left:0;
+right:0;
+bottom:0;
+
+background:#1e293b;
+
+transition:.4s;
+
+border-radius:50px;
+
+border:2px solid rgba(255,255,255,0.1);
+}
+
+.slider:before{
+position:absolute;
+
+content:"";
+
+height:24px;
+width:24px;
+
+left:4px;
+bottom:3px;
+
+background:white;
+
+transition:.4s;
+
+border-radius:50%;
+}
+
+input:checked + .slider{
+background:#00b7ff;
+}
+
+input:checked + .slider:before{
+transform:translateX(29px);
+}
+
+.switch:hover .slider{
+box-shadow:0 0 12px rgba(0,183,255,0.45);
 }
 
 /* HERO */
@@ -162,25 +235,17 @@ font-size:14px;
 
 .hero h1{
 font-size:72px;
-
 font-weight:900;
-
 line-height:1.1;
-
 margin-bottom:30px;
 }
 
 .hero p{
 font-size:22px;
-
 line-height:1.8;
-
 max-width:850px;
-
 margin:auto;
-
 margin-bottom:45px;
-
 color:#d0d0d0;
 }
 
@@ -199,17 +264,11 @@ flex-wrap:wrap;
 
 .btn-primary{
 padding:18px 40px;
-
 background:#00b7ff;
-
 color:white;
-
 text-decoration:none;
-
 font-weight:700;
-
 border-radius:14px;
-
 transition:0.3s;
 }
 
@@ -257,27 +316,20 @@ align-items:center;
 
 .section-mini{
 display:inline-block;
-
 margin-bottom:20px;
-
 color:#00b7ff;
-
 font-weight:700;
-
 letter-spacing:2px;
 }
 
 .about h2{
 font-size:55px;
-
 margin-bottom:30px;
 }
 
 .about p{
 font-size:20px;
-
 line-height:1.9;
-
 margin-bottom:20px;
 }
 
@@ -305,9 +357,7 @@ background:white;
 
 .stat-card h3{
 font-size:45px;
-
 color:#00b7ff;
-
 margin-bottom:10px;
 }
 
@@ -357,7 +407,6 @@ transform:translateY(-8px);
 .card img{
 width:100%;
 height:260px;
-
 object-fit:cover;
 }
 
@@ -367,7 +416,6 @@ padding:35px;
 
 .card-content h3{
 font-size:28px;
-
 margin-bottom:20px;
 }
 
@@ -404,15 +452,12 @@ rgba(255,255,255,0.04)
 
 .contact-box h2{
 font-size:55px;
-
 margin-bottom:30px;
 }
 
 .contact-box p{
 font-size:22px;
-
 line-height:1.8;
-
 margin-bottom:45px;
 }
 
@@ -420,9 +465,7 @@ margin-bottom:45px;
 
 footer{
 padding:60px 20px;
-
 text-align:center;
-
 border-top:1px solid rgba(255,255,255,0.08);
 }
 
@@ -437,102 +480,9 @@ border-radius:50%;
 margin-bottom:20px;
 }
 
-/* SWITCH DARK LIGHT */
-
-.theme-switch{
-
-display:flex;
-
-align-items:center;
-
-gap:12px;
-}
-
-.mode-text{
-font-size:20px;
-}
-
-.switch{
-position:relative;
-
-display:inline-block;
-
-width:64px;
-height:34px;
-}
-
-.switch input{
-opacity:0;
-
-width:0;
-height:0;
-}
-
-/* FONDO */
-
-.slider{
-
-position:absolute;
-
-cursor:pointer;
-
-top:0;
-left:0;
-right:0;
-bottom:0;
-
-background:#1e293b;
-
-transition:.4s;
-
-border-radius:50px;
-
-border:2px solid rgba(255,255,255,0.1);
-}
-
-/* CIRCULO */
-
-.slider:before{
-
-position:absolute;
-
-content:"";
-
-height:24px;
-width:24px;
-
-left:4px;
-bottom:3px;
-
-background:white;
-
-transition:.4s;
-
-border-radius:50%;
-}
-
-/* ACTIVADO */
-
-input:checked + .slider{
-background:#00b7ff;
-}
-
-/* MOVER */
-
-input:checked + .slider:before{
-transform:translateX(29px);
-}
-
-/* EFECTO */
-
-.switch:hover .slider{
-box-shadow:0 0 12px rgba(0,183,255,0.45);
-}
-
 /* WHATSAPP */
 
 .floating-whatsapp{
-
 position:fixed;
 
 bottom:25px;
@@ -571,7 +521,7 @@ width:38px;
 height:38px;
 }
 
-/* ANIMACION */
+/* ANIMATION */
 
 @keyframes floatWhatsapp{
 
@@ -594,18 +544,13 @@ transform:translateY(0px);
 @media(max-width:768px){
 
 header{
-
 padding:20px;
-
 flex-direction:column;
 }
 
 nav{
-
 margin:15px 0;
-
 flex-wrap:wrap;
-
 justify-content:center;
 }
 
@@ -635,7 +580,6 @@ flex-direction:column;
 }
 
 .floating-whatsapp{
-
 width:60px;
 height:60px;
 
@@ -644,7 +588,6 @@ left:20px;
 }
 
 .floating-whatsapp img{
-
 width:34px;
 height:34px;
 }
