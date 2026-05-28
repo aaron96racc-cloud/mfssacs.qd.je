@@ -1,6 +1,6 @@
 # index.html
 
-```html
+```html id="g4h7pl"
 <!DOCTYPE html>
 <html lang="es">
 
@@ -28,11 +28,17 @@
 
 <header>
 
+<!-- LOGO -->
+
 <div class="logo-container">
 
-<img src="img/logo-dark.png" id="logo" class="logo">
+<img src="img/logo-dark.png"
+id="logo"
+class="logo">
 
 </div>
+
+<!-- MENU -->
 
 <nav>
 
@@ -46,13 +52,33 @@
 
 </nav>
 
+<!-- SWITCH DARK LIGHT -->
+
 <div class="header-buttons">
 
-<button id="theme-toggle">
+<div class="theme-switch">
+
+<span class="mode-text">
 
 🌙
 
-</button>
+</span>
+
+<label class="switch">
+
+<input type="checkbox" id="theme-toggle">
+
+<span class="slider"></span>
+
+</label>
+
+<span class="mode-text">
+
+☀️
+
+</span>
+
+</div>
 
 </div>
 
@@ -94,7 +120,8 @@ Solicitar Cotización
 
 </a>
 
-<a href="#servicios" class="btn-secondary">
+<a href="#servicios"
+class="btn-secondary">
 
 Nuestros Servicios
 
