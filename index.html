@@ -1,392 +1,322 @@
-# index.html
-
-```html
 <!DOCTYPE html>
 <html lang="es">
 
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
+  <title>MULTISERVIS FIRE SHOP S.A.C.S.</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO -->
+  <meta name="description" content="Soluciones profesionales en seguridad contra incendios, mantenimiento de extintores y sistemas de alarmas.">
 
-<title>MULTISERVIS FIRE SHOP S.A.C.S.</title>
+  <!-- FAVICON -->
+  <link rel="icon" href="img/favicon.png?v=2" type="image/png">
+  <link rel="shortcut icon" href="img/favicon.ico">
 
-<!-- FAVICON -->
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
 
-<link rel="icon" href="img/favicon.png?v=2">
+  <!-- GOOGLE FONTS -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="shortcut icon" href="img/favicon.ico">
-
-<!-- CSS -->
-
-<link rel="stylesheet" href="style.css">
-
-<!-- GOOGLE FONTS -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- HEADER -->
+  <!-- HEADER -->
+  <header>
 
-<header>
+    <!-- LOGO -->
+    <div class="logo-container">
+      <img
+        src="img/logo-dark.png"
+        id="logo"
+        class="logo"
+        alt="Logo MULTISERVIS FIRE SHOP"
+        loading="eager">
+    </div>
 
-<!-- LOGO -->
+    <!-- MENU -->
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#nosotros">Nosotros</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
 
-<div class="logo-container">
+    <!-- SWITCH DARK LIGHT -->
+    <div class="header-buttons">
+      <div class="theme-switch">
 
-<img src="img/logo-dark.png"
-id="logo"
-class="logo">
+        <span class="mode-text">🌙</span>
 
-</div>
+        <label class="switch">
+          <input type="checkbox" id="theme-toggle" aria-label="Cambiar tema">
+          <span class="slider"></span>
+        </label>
 
-<!-- MENU -->
+        <span class="mode-text">☀️</span>
 
-<nav>
+      </div>
+    </div>
 
-<a href="#inicio">Inicio</a>
+  </header>
 
-<a href="#nosotros">Nosotros</a>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
 
-<a href="#servicios">Servicios</a>
+    <div class="hero-content">
 
-<a href="#contacto">Contacto</a>
+      <span class="tag">
+        PROTECCIÓN • SEGURIDAD • CONFIANZA
+      </span>
 
-</nav>
+      <h1>
+        SOLUCIONES PROFESIONALES EN SEGURIDAD CONTRA INCENDIOS
+      </h1>
 
-<!-- SWITCH DARK LIGHT -->
+      <p>
+        Especialistas en mantenimiento de extintores,
+        sistemas de alarmas contra incendios y soluciones
+        integrales para la protección industrial.
+      </p>
 
-<div class="header-buttons">
+      <div class="hero-buttons">
 
-<div class="theme-switch">
+        <a
+          href="https://wa.me/message/ZP2QQAZKABAVI1"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary">
 
-<span class="mode-text">
+          Solicitar Cotización
 
-🌙
+        </a>
 
-</span>
+        <a href="#servicios" class="btn-secondary">
+          Nuestros Servicios
+        </a>
 
-<label class="switch">
+      </div>
 
-<input type="checkbox" id="theme-toggle">
+    </div>
 
-<span class="slider"></span>
+  </section>
 
-</label>
+  <!-- NOSOTROS -->
+  <section class="about" id="nosotros">
 
-<span class="mode-text">
+    <div class="about-grid">
 
-☀️
+      <div>
 
-</span>
+        <span class="section-mini">
+          SOBRE NOSOTROS
+        </span>
 
-</div>
+        <h2>
+          Comprometidos con la Seguridad Integral
+        </h2>
 
-</div>
+        <p>
+          En MULTISERVIS FIRE SHOP S.A.C.S.
+          brindamos soluciones especializadas
+          en prevención y control de incendios.
+        </p>
 
-</header>
+        <p>
+          Garantizamos altos estándares de calidad,
+          eficiencia y seguridad para empresas
+          e industrias.
+        </p>
 
-<!-- HERO -->
+      </div>
 
-<section class="hero" id="inicio">
+      <div class="stats">
 
-<div class="hero-content">
+        <div class="stat-card">
+          <h3>100%</h3>
+          <p>Compromiso</p>
+        </div>
 
-<span class="tag">
+        <div class="stat-card">
+          <h3>24/7</h3>
+          <p>Soporte</p>
+        </div>
 
-PROTECCIÓN • SEGURIDAD • CONFIANZA
+        <div class="stat-card">
+          <h3>+500</h3>
+          <p>Clientes</p>
+        </div>
 
-</span>
+        <div class="stat-card">
+          <h3>Premium</h3>
+          <p>Calidad</p>
+        </div>
 
-<h1>
+      </div>
 
-SOLUCIONES PROFESIONALES EN SEGURIDAD CONTRA INCENDIOS
+    </div>
 
-</h1>
+  </section>
 
-<p>
+  <!-- SERVICIOS -->
+  <section class="services" id="servicios">
 
-Especialistas en mantenimiento de extintores,
-sistemas de alarmas contra incendios y soluciones
-integrales para la protección industrial.
+    <div class="section-title">
 
-</p>
+      <span class="section-mini">
+        SERVICIOS
+      </span>
 
-<div class="hero-buttons">
+      <h2>
+        Soluciones Profesionales
+      </h2>
 
-<a href="https://wa.me/message/ZP2QQAZKABAVI1"
-target="_blank"
-class="btn-primary">
+    </div>
 
-Solicitar Cotización
+    <div class="cards">
 
-</a>
+      <!-- SERVICIO 1 -->
+      <div class="card">
 
-<a href="#servicios"
-class="btn-secondary">
+        <img
+          src="img/servicio1.jpg"
+          alt="Mantenimiento de extintores"
+          loading="lazy">
 
-Nuestros Servicios
+        <div class="card-content">
 
-</a>
+          <h3>
+            Mantenimiento de Extintores
+          </h3>
 
-</div>
+          <p>
+            Inspección, mantenimiento y recarga
+            de extintores certificados.
+          </p>
 
-</div>
+        </div>
 
-</section>
+      </div>
 
-<!-- NOSOTROS -->
+      <!-- SERVICIO 2 -->
+      <div class="card">
 
-<section class="about" id="nosotros">
+        <img
+          src="img/servicio2.jpg"
+          alt="Sistemas contra incendios"
+          loading="lazy">
 
-<div class="about-grid">
+        <div class="card-content">
 
-<div>
+          <h3>
+            Sistemas Contra Incendios
+          </h3>
 
-<span class="section-mini">
+          <p>
+            Mantenimiento de alarmas y sistemas
+            de detección contra incendios.
+          </p>
 
-SOBRE NOSOTROS
+        </div>
 
-</span>
+      </div>
 
-<h2>
+      <!-- SERVICIO 3 -->
+      <div class="card">
 
-Comprometidos con la Seguridad Integral
+        <img
+          src="img/servicio3.jpg"
+          alt="Seguridad industrial"
+          loading="lazy">
 
-</h2>
+        <div class="card-content">
 
-<p>
+          <h3>
+            Seguridad Industrial
+          </h3>
 
-En MULTISERVIS FIRE SHOP S.A.C.S.
-brindamos soluciones especializadas
-en prevención y control de incendios.
+          <p>
+            Venta de equipos y accesorios
+            de protección industrial.
+          </p>
 
-</p>
+        </div>
 
-<p>
+      </div>
 
-Garantizamos altos estándares de calidad,
-eficiencia y seguridad para empresas
-e industrias.
+    </div>
 
-</p>
+  </section>
 
-</div>
+  <!-- CONTACTO -->
+  <section class="contact" id="contacto">
 
-<div class="stats">
+    <div class="contact-box">
 
-<div class="stat-card">
+      <h2>
+        Contáctanos
+      </h2>
 
-<h3>100%</h3>
+      <p>
+        Nuestro equipo está listo para ayudarte
+        con soluciones profesionales en seguridad
+        contra incendios.
+      </p>
 
-<p>Compromiso</p>
+      <a
+        href="https://wa.me/message/ZP2QQAZKABAVI1"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="btn-primary">
 
-</div>
+        Contactar por WhatsApp
 
-<div class="stat-card">
+      </a>
 
-<h3>24/7</h3>
+    </div>
 
-<p>Soporte</p>
+  </section>
 
-</div>
+  <!-- FOOTER -->
+  <footer>
 
-<div class="stat-card">
+    <img
+      src="img/logo-dark.png"
+      id="footer-logo"
+      class="footer-logo"
+      alt="Logo footer MULTISERVIS FIRE SHOP"
+      loading="lazy">
 
-<h3>+500</h3>
+    <p>
+      © 2026 MULTISERVIS FIRE SHOP S.A.C.S.
+      Todos los derechos reservados.
+    </p>
 
-<p>Clientes</p>
+  </footer>
 
-</div>
+  <!-- WHATSAPP -->
+  <a
+    href="https://wa.me/message/ZP2QQAZKABAVI1"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="floating-whatsapp"
+    aria-label="WhatsApp">
 
-<div class="stat-card">
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="WhatsApp"
+      loading="lazy">
 
-<h3>Premium</h3>
+  </a>
 
-<p>Calidad</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- SERVICIOS -->
-
-<section class="services" id="servicios">
-
-<div class="section-title">
-
-<span class="section-mini">
-
-SERVICIOS
-
-</span>
-
-<h2>
-
-Soluciones Profesionales
-
-</h2>
-
-</div>
-
-<div class="cards">
-
-<!-- SERVICIO 1 -->
-
-<div class="card">
-
-<img src="img/servicio1.jpg">
-
-<div class="card-content">
-
-<h3>
-
-Mantenimiento de Extintores
-
-</h3>
-
-<p>
-
-Inspección, mantenimiento y recarga
-de extintores certificados.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- SERVICIO 2 -->
-
-<div class="card">
-
-<img src="img/servicio2.jpg">
-
-<div class="card-content">
-
-<h3>
-
-Sistemas Contra Incendios
-
-</h3>
-
-<p>
-
-Mantenimiento de alarmas y sistemas
-de detección contra incendios.
-
-</p>
-
-</div>
-
-</div>
-
-<!-- SERVICIO 3 -->
-
-<div class="card">
-
-<img src="img/servicio3.jpg">
-
-<div class="card-content">
-
-<h3>
-
-Seguridad Industrial
-
-</h3>
-
-<p>
-
-Venta de equipos y accesorios
-de protección industrial.
-
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACTO -->
-
-<section class="contact" id="contacto">
-
-<div class="contact-box">
-
-<h2>
-
-Contáctanos
-
-</h2>
-
-<p>
-
-Nuestro equipo está listo para ayudarte
-con soluciones profesionales en seguridad
-contra incendios.
-
-</p>
-
-<a href="https://wa.me/message/ZP2QQAZKABAVI1"
-target="_blank"
-class="btn-primary">
-
-Contactar por WhatsApp
-
-</a>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-
-<footer>
-
-<img src="img/logo-dark.png"
-id="footer-logo"
-class="footer-logo">
-
-<p>
-
-© 2026 MULTISERVIS FIRE SHOP S.A.C.S.
-Todos los derechos reservados.
-
-</p>
-
-</footer>
-
-<!-- WHATSAPP -->
-
-<a href="https://wa.me/message/ZP2QQAZKABAVI1"
-target="_blank"
-class="floating-whatsapp">
-
-<img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
-alt="WhatsApp">
-
-</a>
-
-<!-- SCRIPT -->
-
-<script src="script.js"></script>
+  <!-- SCRIPT -->
+  <script src="script.js"></script>
 
 </body>
 
 </html>
-```
