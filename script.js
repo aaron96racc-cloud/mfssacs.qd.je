@@ -1,49 +1,31 @@
 # script.js
 
-```javascript id="1bf5nk"
+```javascript id="n2v9sh"
 const toggleButton = document.getElementById("theme-toggle");
 
 const body = document.body;
 
-const logo = document.getElementById("logo");
+const mainLogo = document.getElementById("logo");
+
+const footerLogo = document.querySelector(".footer-logo");
 
 /* =========================
-   CARGAR TEMA GUARDADO
+   FUNCION CAMBIAR TEMA
 ========================= */
 
-const savedTheme = localStorage.getItem("theme");
+function setTheme(theme){
 
-if(savedTheme === "light"){
+if(theme === "light"){
 
 body.classList.add("light-mode");
 
-logo.src = "img/logo-light.png";
+/* CAMBIAR LOGOS */
 
-toggleButton.innerHTML = "☀️";
+mainLogo.src = "img/logo-light.png";
 
-}else{
+footerLogo.src = "img/logo-light.png";
 
-body.classList.remove("light-mode");
-
-logo.src = "img/logo-dark.png";
-
-toggleButton.innerHTML = "🌙";
-
-}
-
-/* =========================
-   CAMBIAR TEMA
-========================= */
-
-toggleButton.addEventListener("click", () => {
-
-body.classList.toggle("light-mode");
-
-/* ===== LIGHT MODE ===== */
-
-if(body.classList.contains("light-mode")){
-
-logo.src = "img/logo-light.png";
+/* ICONO */
 
 toggleButton.innerHTML = "☀️";
 
@@ -53,17 +35,65 @@ localStorage.setItem("theme", "light");
 
 }
 
-/* ===== DARK MODE ===== */
+/* ===== DARK ===== */
 
 else{
 
-logo.src = "img/logo-dark.png";
+body.classList.remove("light-mode");
+
+/* CAMBIAR LOGOS */
+
+mainLogo.src = "img/logo-dark.png";
+
+footerLogo.src = "img/logo-dark.png";
+
+/* ICONO */
 
 toggleButton.innerHTML = "🌙";
 
 /* GUARDAR */
 
 localStorage.setItem("theme", "dark");
+
+}
+
+}
+
+/* =========================
+   CARGAR TEMA GUARDADO
+========================= */
+
+const savedTheme = localStorage.getItem("theme");
+
+/* SI EXISTE */
+
+if(savedTheme){
+
+setTheme(savedTheme);
+
+}
+
+/* SI NO EXISTE */
+
+else{
+
+setTheme("dark");
+
+}
+
+/* =========================
+   BOTON CAMBIO
+========================= */
+
+toggleButton.addEventListener("click", () => {
+
+if(body.classList.contains("light-mode")){
+
+setTheme("dark");
+
+}else{
+
+setTheme("light");
 
 }
 
