@@ -1,19 +1,10 @@
+
 window.addEventListener("DOMContentLoaded", () => {
 
 const body = document.body;
-
 const toggle = document.getElementById("theme-toggle");
-
 const logo = document.getElementById("logo");
-
 const footerLogo = document.getElementById("footer-logo");
-
-if (!toggle || !logo || !footerLogo) {
-  console.error("No se encontraron elementos necesarios para el cambio de tema.");
-  return;
-}
-
-/* DARK MODE */
 
 function enableDarkMode(){
 
@@ -29,8 +20,6 @@ localStorage.setItem("theme","dark");
 
 }
 
-/* LIGHT MODE */
-
 function enableLightMode(){
 
 body.classList.add("light-mode");
@@ -45,8 +34,6 @@ localStorage.setItem("theme","light");
 
 }
 
-/* LOAD SAVED THEME */
-
 const savedTheme = localStorage.getItem("theme");
 
 if(savedTheme === "light"){
@@ -58,8 +45,6 @@ enableLightMode();
 enableDarkMode();
 
 }
-
-/* CHANGE THEME */
 
 toggle.addEventListener("change", () => {
 
