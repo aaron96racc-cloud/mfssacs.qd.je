@@ -42,7 +42,16 @@ background:rgba(255,255,255,0.9);
 /* LOGO */
 
 .logo{
-height:120px;
+height:130px;
+width:auto;
+background:transparent;
+border:none;
+object-fit:contain;
+display:block;
+
+filter:
+drop-shadow(0 0 10px rgba(0,183,255,0.4));
+
 }
 
 /* NAV */
@@ -97,6 +106,7 @@ body.light-mode .hero{
 background:
 linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.7)),
 url('img/hero.jpg');
+
 background-size:cover;
 background-position:center;
 }
