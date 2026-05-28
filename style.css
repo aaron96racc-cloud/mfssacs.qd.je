@@ -4,12 +4,20 @@ padding:0;
 box-sizing:border-box;
 font-family:'Montserrat', sans-serif;
 scroll-behavior:smooth;
+transition:0.3s;
 }
 
 body{
 background:#0b0b0b;
 color:white;
 overflow-x:hidden;
+}
+
+/* LIGHT MODE */
+
+body.light-mode{
+background:#f4f4f4;
+color:#111;
 }
 
 /* HEADER */
@@ -21,32 +29,56 @@ width:100%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px 60px;
+padding:20px 60px;
 background:rgba(0,0,0,0.7);
 backdrop-filter:blur(10px);
 z-index:1000;
 }
 
-.logo{
-height:150px;
+body.light-mode header{
+background:rgba(255,255,255,0.9);
 }
+
+/* LOGO */
+
+.logo{
+height:120px;
+}
+
+/* NAV */
 
 nav a{
 color:white;
 text-decoration:none;
 margin-left:30px;
 font-weight:600;
-transition:0.3s;
+}
+
+body.light-mode nav a{
+color:black;
 }
 
 nav a:hover{
 color:#00b7ff;
 }
 
+/* BUTTON TOGGLE */
+
+#theme-toggle{
+background:#00b7ff;
+border:none;
+padding:10px 15px;
+border-radius:5px;
+cursor:pointer;
+font-size:18px;
+color:white;
+}
+
 /* HERO */
 
 .hero{
 height:100vh;
+
 background:
 linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)),
 url('img/hero.jpg');
@@ -61,6 +93,16 @@ text-align:center;
 padding:20px;
 }
 
+body.light-mode .hero{
+background:
+linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.7)),
+url('img/hero.jpg');
+background-size:cover;
+background-position:center;
+}
+
+/* HERO TEXT */
+
 .hero-content{
 max-width:900px;
 }
@@ -69,14 +111,12 @@ max-width:900px;
 font-size:65px;
 font-weight:800;
 margin-bottom:25px;
-line-height:1.1;
 }
 
 .hero p{
 font-size:22px;
 line-height:1.7;
 margin-bottom:40px;
-color:#d0d0d0;
 }
 
 /* BUTTON */
@@ -89,7 +129,6 @@ color:white;
 text-decoration:none;
 font-weight:700;
 border-radius:5px;
-transition:0.3s;
 }
 
 .btn:hover{
@@ -104,6 +143,10 @@ padding:120px 80px;
 background:#111;
 }
 
+body.light-mode .about{
+background:white;
+}
+
 .about h2{
 font-size:45px;
 margin-bottom:30px;
@@ -113,7 +156,6 @@ color:#00b7ff;
 .about p{
 font-size:20px;
 line-height:1.8;
-max-width:1000px;
 }
 
 /* SERVICES */
@@ -123,12 +165,18 @@ padding:120px 80px;
 background:#0b0b0b;
 }
 
+body.light-mode .services{
+background:#f2f2f2;
+}
+
 .services h2{
 text-align:center;
 font-size:50px;
 margin-bottom:60px;
 color:#00b7ff;
 }
+
+/* CARDS */
 
 .cards{
 display:grid;
@@ -140,13 +188,12 @@ gap:35px;
 background:#151515;
 border-radius:15px;
 overflow:hidden;
-transition:0.4s;
 border:1px solid #222;
 }
 
-.card:hover{
-transform:translateY(-10px);
-border-color:#00b7ff;
+body.light-mode .card{
+background:white;
+border:1px solid #ddd;
 }
 
 .card img{
@@ -166,26 +213,6 @@ font-size:26px;
 
 .card-content p{
 line-height:1.7;
-color:#ccc;
-}
-
-/* CONTACT */
-
-.contact{
-padding:120px 30px;
-text-align:center;
-background:#101010;
-}
-
-.contact h2{
-font-size:50px;
-margin-bottom:20px;
-color:#00b7ff;
-}
-
-.contact p{
-font-size:22px;
-margin-bottom:40px;
 }
 
 /* FOOTER */
@@ -194,8 +221,12 @@ footer{
 padding:40px;
 text-align:center;
 background:black;
-border-top:1px solid #222;
 color:#888;
+}
+
+body.light-mode footer{
+background:#e5e5e5;
+color:#333;
 }
 
 /* RESPONSIVE */
@@ -203,12 +234,12 @@ color:#888;
 @media(max-width:768px){
 
 header{
-padding:15px 20px;
+padding:20px;
 flex-direction:column;
 }
 
 nav{
-margin-top:15px;
+margin:15px 0;
 }
 
 nav a{
@@ -225,13 +256,11 @@ font-size:18px;
 
 .about,
 .services{
-padding:80px 25px;
+padding:80px 20px;
 }
 
-.services h2,
-.about h2,
-.contact h2{
-font-size:38px;
+.logo{
+height:90px;
 }
 
 }
