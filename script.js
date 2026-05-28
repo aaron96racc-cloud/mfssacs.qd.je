@@ -1,7 +1,4 @@
-# script.js
-
-```javascript
-window.onload = function(){
+window.addEventListener("DOMContentLoaded", () => {
 
 const body = document.body;
 
@@ -10,6 +7,11 @@ const toggle = document.getElementById("theme-toggle");
 const logo = document.getElementById("logo");
 
 const footerLogo = document.getElementById("footer-logo");
+
+if (!toggle || !logo || !footerLogo) {
+  console.error("No se encontraron elementos necesarios para el cambio de tema.");
+  return;
+}
 
 /* DARK MODE */
 
@@ -59,7 +61,7 @@ enableDarkMode();
 
 /* CHANGE THEME */
 
-toggle.addEventListener("change", function(){
+toggle.addEventListener("change", () => {
 
 if(toggle.checked){
 
@@ -73,5 +75,4 @@ enableDarkMode();
 
 });
 
-};
-```
+});
