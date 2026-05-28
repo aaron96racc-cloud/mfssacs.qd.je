@@ -1,15 +1,7 @@
 # script.js
 
-```javascript id="v4y2zr"
-// ====================================
-// ESPERAR CARGA COMPLETA
-// ====================================
-
+```javascript
 window.onload = function(){
-
-// ====================================
-// ELEMENTOS
-// ====================================
 
 const body = document.body;
 
@@ -19,9 +11,7 @@ const logo = document.getElementById("logo");
 
 const footerLogo = document.getElementById("footer-logo");
 
-// ====================================
-// ACTIVAR DARK MODE
-// ====================================
+/* DARK MODE */
 
 function darkMode(){
 
@@ -37,9 +27,7 @@ localStorage.setItem("theme","dark");
 
 }
 
-// ====================================
-// ACTIVAR LIGHT MODE
-// ====================================
+/* LIGHT MODE */
 
 function lightMode(){
 
@@ -55,45 +43,29 @@ localStorage.setItem("theme","light");
 
 }
 
-// ====================================
-// CARGAR TEMA GUARDADO
-// ====================================
+/* CARGAR TEMA */
 
 const savedTheme = localStorage.getItem("theme");
-
-// SI EL TEMA ES LIGHT
 
 if(savedTheme === "light"){
 
 lightMode();
 
-}
-
-// SI NO EXISTE O ES DARK
-
-else{
+}else{
 
 darkMode();
 
 }
 
-// ====================================
-// BOTON CAMBIO TEMA
-// ====================================
+/* BOTON CAMBIO */
 
 toggleButton.addEventListener("click", function(){
-
-// SI ESTA EN LIGHT
 
 if(body.classList.contains("light-mode")){
 
 darkMode();
 
-}
-
-// SI ESTA EN DARK
-
-else{
+}else{
 
 lightMode();
 
