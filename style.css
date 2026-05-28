@@ -1,6 +1,6 @@
 # style.css
 
-```css id="v9c2pw"
+```css id="g5v8tm"
 *{
 margin:0;
 padding:0;
@@ -104,7 +104,7 @@ nav a:hover::after{
 width:100%;
 }
 
-/* HEADER BUTTONS */
+/* BOTONES HEADER */
 
 .header-buttons{
 display:flex;
@@ -112,15 +112,15 @@ align-items:center;
 gap:15px;
 }
 
-/* THEME BUTTON */
+/* BOTON DARK LIGHT */
 
 #theme-toggle{
-width:50px;
-height:50px;
+width:52px;
+height:52px;
 
 border:none;
 
-border-radius:12px;
+border-radius:14px;
 
 background:#00b7ff;
 
@@ -129,27 +129,12 @@ color:white;
 font-size:20px;
 
 cursor:pointer;
+
+transition:0.3s;
 }
 
-/* WHATSAPP */
-
-.whatsapp-header{
-width:50px;
-height:50px;
-
-display:flex;
-justify-content:center;
-align-items:center;
-
-background:#00b7ff;
-
-border-radius:12px;
-
-color:white;
-
-font-size:24px;
-
-text-decoration:none;
+#theme-toggle:hover{
+transform:scale(1.08);
 }
 
 /* HERO */
@@ -230,7 +215,7 @@ body.light-mode .hero p{
 color:#333;
 }
 
-/* BUTTONS */
+/* BOTONES */
 
 .hero-buttons{
 display:flex;
@@ -251,6 +236,12 @@ text-decoration:none;
 font-weight:700;
 
 border-radius:14px;
+
+transition:0.3s;
+}
+
+.btn-primary:hover{
+transform:translateY(-5px);
 }
 
 .btn-secondary{
@@ -265,6 +256,12 @@ text-decoration:none;
 font-weight:700;
 
 border-radius:14px;
+
+transition:0.3s;
+}
+
+.btn-secondary:hover{
+transform:translateY(-5px);
 }
 
 body.light-mode .btn-secondary{
@@ -459,6 +456,69 @@ border-radius:50%;
 margin-bottom:20px;
 }
 
+/* WHATSAPP FLOTANTE */
+
+.floating-whatsapp{
+
+position:fixed;
+
+bottom:25px;
+
+left:25px;
+
+width:65px;
+
+height:65px;
+
+background:#25D366;
+
+color:white;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:34px;
+
+text-decoration:none;
+
+box-shadow:
+0 0 20px rgba(37,211,102,0.45);
+
+z-index:9999;
+
+transition:0.3s;
+
+animation:floatWhatsapp 2.5s infinite ease-in-out;
+
+}
+
+.floating-whatsapp:hover{
+
+transform:scale(1.12);
+
+}
+
+@keyframes floatWhatsapp{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-6px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
 /* RESPONSIVE */
 
 @media(max-width:768px){
@@ -497,6 +557,18 @@ grid-template-columns:1fr;
 
 .hero-buttons{
 flex-direction:column;
+}
+
+.floating-whatsapp{
+
+width:60px;
+height:60px;
+
+font-size:30px;
+
+bottom:20px;
+left:20px;
+
 }
 
 }
