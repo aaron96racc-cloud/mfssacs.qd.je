@@ -1,6 +1,6 @@
 # script.js
 
-```javascript id="w9b5tc"
+```javascript
 window.onload = function(){
 
 const body = document.body;
@@ -11,9 +11,7 @@ const logo = document.getElementById("logo");
 
 const footerLogo = document.getElementById("footer-logo");
 
-/* =========================
-   DARK MODE
-========================= */
+/* DARK MODE */
 
 function enableDarkMode(){
 
@@ -29,9 +27,7 @@ localStorage.setItem("theme","dark");
 
 }
 
-/* =========================
-   LIGHT MODE
-========================= */
+/* LIGHT MODE */
 
 function enableLightMode(){
 
@@ -47,9 +43,7 @@ localStorage.setItem("theme","light");
 
 }
 
-/* =========================
-   CARGAR TEMA
-========================= */
+/* LOAD SAVED THEME */
 
 const savedTheme = localStorage.getItem("theme");
 
@@ -63,9 +57,7 @@ enableDarkMode();
 
 }
 
-/* =========================
-   CAMBIAR TEMA
-========================= */
+/* CHANGE THEME */
 
 toggle.addEventListener("change", function(){
 
