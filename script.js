@@ -1,16 +1,16 @@
 # script.js
 
-```javascript id="n2v9sh"
+```javascript id="r5b8x1"
 const toggleButton = document.getElementById("theme-toggle");
 
 const body = document.body;
 
 const mainLogo = document.getElementById("logo");
 
-const footerLogo = document.querySelector(".footer-logo");
+const footerLogo = document.getElementById("footer-logo");
 
 /* =========================
-   FUNCION CAMBIAR TEMA
+   CAMBIAR TEMA
 ========================= */
 
 function setTheme(theme){
@@ -19,7 +19,7 @@ if(theme === "light"){
 
 body.classList.add("light-mode");
 
-/* CAMBIAR LOGOS */
+/* LOGOS */
 
 mainLogo.src = "img/logo-light.png";
 
@@ -35,13 +35,13 @@ localStorage.setItem("theme", "light");
 
 }
 
-/* ===== DARK ===== */
+/* DARK MODE */
 
 else{
 
 body.classList.remove("light-mode");
 
-/* CAMBIAR LOGOS */
+/* LOGOS */
 
 mainLogo.src = "img/logo-dark.png";
 
@@ -63,6 +63,8 @@ localStorage.setItem("theme", "dark");
    CARGAR TEMA GUARDADO
 ========================= */
 
+document.addEventListener("DOMContentLoaded", () => {
+
 const savedTheme = localStorage.getItem("theme");
 
 /* SI EXISTE */
@@ -81,9 +83,7 @@ setTheme("dark");
 
 }
 
-/* =========================
-   BOTON CAMBIO
-========================= */
+/* BOTON */
 
 toggleButton.addEventListener("click", () => {
 
@@ -96,6 +96,8 @@ setTheme("dark");
 setTheme("light");
 
 }
+
+});
 
 });
 ```
