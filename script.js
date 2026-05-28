@@ -1,6 +1,12 @@
 # script.js
 
-```javascript id="r5b8x1"
+```javascript id="s3w9qn"
+// ESPERAR CARGA COMPLETA
+
+document.addEventListener("DOMContentLoaded", function(){
+
+// ELEMENTOS
+
 const toggleButton = document.getElementById("theme-toggle");
 
 const body = document.body;
@@ -10,50 +16,36 @@ const mainLogo = document.getElementById("logo");
 const footerLogo = document.getElementById("footer-logo");
 
 /* =========================
-   CAMBIAR TEMA
+   FUNCION APLICAR TEMA
 ========================= */
 
-function setTheme(theme){
+function applyTheme(theme){
+
+// LIGHT MODE
 
 if(theme === "light"){
 
 body.classList.add("light-mode");
 
-/* LOGOS */
+toggleButton.innerHTML = "☀️";
 
 mainLogo.src = "img/logo-light.png";
 
 footerLogo.src = "img/logo-light.png";
 
-/* ICONO */
-
-toggleButton.innerHTML = "☀️";
-
-/* GUARDAR */
-
-localStorage.setItem("theme", "light");
-
 }
 
-/* DARK MODE */
+// DARK MODE
 
 else{
 
 body.classList.remove("light-mode");
 
-/* LOGOS */
+toggleButton.innerHTML = "🌙";
 
 mainLogo.src = "img/logo-dark.png";
 
 footerLogo.src = "img/logo-dark.png";
-
-/* ICONO */
-
-toggleButton.innerHTML = "🌙";
-
-/* GUARDAR */
-
-localStorage.setItem("theme", "dark");
 
 }
 
@@ -63,37 +55,47 @@ localStorage.setItem("theme", "dark");
    CARGAR TEMA GUARDADO
 ========================= */
 
-document.addEventListener("DOMContentLoaded", () => {
-
 const savedTheme = localStorage.getItem("theme");
 
-/* SI EXISTE */
+// SI EXISTE
 
 if(savedTheme){
 
-setTheme(savedTheme);
+applyTheme(savedTheme);
 
 }
 
-/* SI NO EXISTE */
+// SI NO EXISTE
 
 else{
 
-setTheme("dark");
+applyTheme("dark");
 
 }
 
-/* BOTON */
+/* =========================
+   BOTON CAMBIO TEMA
+========================= */
 
-toggleButton.addEventListener("click", () => {
+toggleButton.addEventListener("click", function(){
+
+// SI ESTA EN LIGHT
 
 if(body.classList.contains("light-mode")){
 
-setTheme("dark");
+applyTheme("dark");
 
-}else{
+localStorage.setItem("theme", "dark");
 
-setTheme("light");
+}
+
+// SI ESTA EN DARK
+
+else{
+
+applyTheme("light");
+
+localStorage.setItem("theme", "light");
 
 }
 
