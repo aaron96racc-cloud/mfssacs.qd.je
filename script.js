@@ -1,7 +1,25 @@
-window.addEventListener("scroll", function(){
+const toggleButton = document.getElementById("theme-toggle");
 
-const header = document.querySelector("header");
+const body = document.body;
 
-header.classList.toggle("scroll", window.scrollY > 50);
+const logo = document.getElementById("logo");
+
+toggleButton.addEventListener("click", () => {
+
+body.classList.toggle("light-mode");
+
+if(body.classList.contains("light-mode")){
+
+logo.src = "img/logo-light.png";
+
+toggleButton.innerHTML = "☀️";
+
+}else{
+
+logo.src = "img/logo-dark.png";
+
+toggleButton.innerHTML = "🌙";
+
+}
 
 });
