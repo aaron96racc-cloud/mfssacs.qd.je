@@ -1,6 +1,6 @@
 # script.js
 
-```javascript id="w4m8rz"
+```javascript id="v4y2zr"
 // ====================================
 // ESPERAR CARGA COMPLETA
 // ====================================
