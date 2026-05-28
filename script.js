@@ -1,23 +1,25 @@
 # script.js
 
-```javascript
+```javascript id="w9b5tc"
 window.onload = function(){
 
 const body = document.body;
 
-const toggleButton = document.getElementById("theme-toggle");
+const toggle = document.getElementById("theme-toggle");
 
 const logo = document.getElementById("logo");
 
 const footerLogo = document.getElementById("footer-logo");
 
-/* DARK MODE */
+/* =========================
+   DARK MODE
+========================= */
 
-function darkMode(){
+function enableDarkMode(){
 
 body.classList.remove("light-mode");
 
-toggleButton.innerHTML = "🌙";
+toggle.checked = false;
 
 logo.src = "img/logo-dark.png";
 
@@ -27,13 +29,15 @@ localStorage.setItem("theme","dark");
 
 }
 
-/* LIGHT MODE */
+/* =========================
+   LIGHT MODE
+========================= */
 
-function lightMode(){
+function enableLightMode(){
 
 body.classList.add("light-mode");
 
-toggleButton.innerHTML = "☀️";
+toggle.checked = true;
 
 logo.src = "img/logo-light.png";
 
@@ -43,31 +47,35 @@ localStorage.setItem("theme","light");
 
 }
 
-/* CARGAR TEMA */
+/* =========================
+   CARGAR TEMA
+========================= */
 
 const savedTheme = localStorage.getItem("theme");
 
 if(savedTheme === "light"){
 
-lightMode();
+enableLightMode();
 
 }else{
 
-darkMode();
+enableDarkMode();
 
 }
 
-/* BOTON CAMBIO */
+/* =========================
+   CAMBIAR TEMA
+========================= */
 
-toggleButton.addEventListener("click", function(){
+toggle.addEventListener("change", function(){
 
-if(body.classList.contains("light-mode")){
+if(toggle.checked){
 
-darkMode();
+enableLightMode();
 
 }else{
 
-lightMode();
+enableDarkMode();
 
 }
 
