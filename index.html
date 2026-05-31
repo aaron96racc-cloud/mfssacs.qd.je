@@ -71,6 +71,7 @@
 <a href="#nosotros">Nosotros</a>
 <a href="#servicios">Servicios</a>
 <a href="#clientes">Clientes</a>
+<a href="#cotizacion">Cotización</a>
 <a href="#faq">FAQ</a>
 <a href="#contacto">Contacto</a>
 </nav>
@@ -204,17 +205,17 @@ Trabajamos con enfoque técnico, atención cercana y procesos orientados a mante
 
 <div class="client-logos" aria-label="Logos de clientes">
 <article class="client-logo-card">
-<img src="img/logo-essalud.jpg" alt="Logo de EsSalud" width="220" height="90" loading="lazy">
+<img src="img/logo-essalud.svg" alt="Logo de EsSalud" width="220" height="90" loading="lazy">
 </article>
 <article class="client-logo-card">
-<img src="img/logo-sisol.jpg" alt="Logo de SISOL" width="220" height="90" loading="lazy">
+<img src="img/logo-sisol.svg" alt="Logo de SISOL" width="220" height="90" loading="lazy">
 </article>
 </div>
 
 <div class="testimonial-grid">
 <article class="testimonial-card">
 <p>“Excelente atención y rapidez en el mantenimiento de extintores.”</p>
-<h3>Cliente empresarial (EsSalud)</h3>
+<h3>Cliente empresarial</h3>
 </article>
 <article class="testimonial-card">
 <p>“Servicio profesional y soporte técnico eficiente.”</p>
@@ -222,7 +223,7 @@ Trabajamos con enfoque técnico, atención cercana y procesos orientados a mante
 </article>
 <article class="testimonial-card">
 <p>“Muy buena atención en sistemas contra incendios.”</p>
-<h3>Cliente corporativo (SISOL SALUD)</h3>
+<h3>Cliente corporativo</h3>
 </article>
 </div>
 </section>
@@ -249,12 +250,116 @@ Trabajamos con enfoque técnico, atención cercana y procesos orientados a mante
 </div>
 </section>
 
+<section class="quote section-shell reveal" id="cotizacion">
+<div class="section-title">
+<span class="section-mini">Cotización profesional</span>
+<h2>Cuéntanos qué necesita tu empresa</h2>
+<p>
+Completa tus datos y prepararemos una respuesta técnica para mantenimiento, implementación o abastecimiento de equipos contra incendios.
+</p>
+</div>
+
+<div class="quote-layout">
+<form class="quote-form" id="quote-form">
+<div class="form-grid">
+<label>
+Empresa o razón social
+<input type="text" name="empresa" autocomplete="organization" placeholder="Nombre de la empresa" required>
+</label>
+
+<label>
+RUC
+<input type="text" name="ruc" inputmode="numeric" maxlength="11" placeholder="Ej. 20123456789">
+</label>
+
+<label>
+Nombre de contacto
+<input type="text" name="contacto" autocomplete="name" placeholder="Nombre y apellido" required>
+</label>
+
+<label>
+Cargo o área
+<input type="text" name="cargo" placeholder="Compras, logística, mantenimiento">
+</label>
+
+<label>
+Teléfono / WhatsApp
+<input type="tel" name="telefono" autocomplete="tel" placeholder="+51 969 300 563" required>
+</label>
+
+<label>
+Correo corporativo
+<input type="email" name="email" autocomplete="email" placeholder="correo@empresa.com" required>
+</label>
+
+<label>
+Servicio requerido
+<select name="servicio" required>
+<option value="">Selecciona una opción</option>
+<option>Mantenimiento y recarga de extintores</option>
+<option>Sistemas de alarmas contra incendios</option>
+<option>Equipos y accesorios de seguridad industrial</option>
+<option>Inspección técnica y diagnóstico</option>
+<option>Otro servicio especializado</option>
+</select>
+</label>
+
+<label>
+Ubicación del servicio
+<input type="text" name="ubicacion" placeholder="Distrito, provincia o sede" required>
+</label>
+
+<label>
+Prioridad
+<select name="prioridad">
+<option>Atención programada</option>
+<option>Atención urgente</option>
+<option>Proyecto corporativo</option>
+</select>
+</label>
+
+<label>
+Cantidad estimada
+<input type="text" name="cantidad" placeholder="Ej. 20 extintores, 1 sede, 3 pisos">
+</label>
+</div>
+
+<label class="full-field">
+Detalle del requerimiento
+<textarea name="detalle" rows="5" placeholder="Describe equipos, cantidades, sede, horarios disponibles o cualquier información relevante." required></textarea>
+</label>
+
+<label class="consent-field">
+<input type="checkbox" name="consentimiento" required>
+<span>Autorizo el tratamiento de mis datos para atender esta solicitud de cotización, conforme a la <a href="politica-privacidad.html">Política de Privacidad</a>.</span>
+</label>
+
+<div class="form-actions">
+<button type="submit" class="btn-primary">Enviar solicitud por WhatsApp</button>
+<a class="btn-secondary" href="mailto:flamecontrols.mfs@gmail.com?subject=Solicitud%20de%20cotizaci%C3%B3n%20corporativa">Enviar por correo</a>
+</div>
+
+<p class="form-note">La información enviada será utilizada únicamente para responder tu solicitud comercial o técnica.</p>
+</form>
+
+<aside class="quote-panel" aria-label="Información de atención comercial">
+<h3>Atención corporativa</h3>
+<p>Recibimos solicitudes de empresas privadas, instituciones, comercios, almacenes y plantas industriales en Lima, Perú.</p>
+<ul>
+<li>Respuesta por WhatsApp o correo.</li>
+<li>Revisión técnica según el alcance solicitado.</li>
+<li>Cotización sujeta a evaluación del requerimiento.</li>
+</ul>
+</aside>
+</div>
+</section>
+
 <section class="contact reveal" id="contacto">
 <div class="contact-box">
 <span class="section-mini">Contacto</span>
-<h2>Solicita una cotización técnica</h2>
+<h2>Hablemos de tu requerimiento</h2>
 <p>
-Atendemos empresas e industrias en Lima con mantenimiento de alarmas contra incendios, recarga de extintores y venta de equipos de seguridad industrial.
+También puedes comunicarte directamente con nuestro equipo para coordinar una atención técnica o comercial.
 </p>
 
 <div class="contact-info">
@@ -280,6 +385,10 @@ Atendemos empresas e industrias en Lima con mantenimiento de alarmas contra ince
 </div>
 
 <p class="copyright">© 2026 Multiservis Fire Shop S.A.C.S. Todos los derechos reservados.</p>
+<nav class="legal-links" aria-label="Enlaces legales">
+<a href="politica-privacidad.html">Política de Privacidad</a>
+<a href="terminos-condiciones.html">Términos y Condiciones</a>
+</nav>
 </footer>
 
 <a href="https://wa.me/51969300563?text=Hola,%20quiero%20realizar%20una%20cotizaci%C3%B3n%20para:" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="Contactar por WhatsApp">

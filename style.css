@@ -500,6 +500,155 @@ display:grid;
 gap:18px;
 }
 
+.quote{
+background:linear-gradient(180deg,rgba(229,57,53,0.08),transparent 45%,rgba(15,107,179,0.08));
+}
+
+.quote .section-title p{
+font-size:1.05rem;
+line-height:1.7;
+color:var(--color-muted);
+}
+
+.quote-layout{
+max-width:1180px;
+margin:0 auto;
+display:grid;
+grid-template-columns:minmax(0,1fr) 340px;
+gap:28px;
+align-items:start;
+}
+
+.quote-form,
+.quote-panel,
+.legal-card{
+background:var(--color-card);
+border:1px solid var(--color-linea);
+border-radius:var(--radio);
+box-shadow:var(--sombra);
+}
+
+.quote-form{
+padding:clamp(24px,4vw,40px);
+}
+
+.form-grid{
+display:grid;
+grid-template-columns:repeat(2,minmax(0,1fr));
+gap:18px;
+}
+
+.quote-form label{
+display:grid;
+gap:9px;
+font-size:0.9rem;
+font-weight:800;
+color:var(--color-texto);
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea{
+width:100%;
+border:1px solid var(--color-linea);
+border-radius:var(--radio);
+background:rgba(255,255,255,0.08);
+color:var(--color-texto);
+font:inherit;
+font-size:0.96rem;
+padding:14px 15px;
+outline:none;
+transition:border-color 0.2s ease,box-shadow 0.2s ease,background-color 0.2s ease;
+}
+
+body.light-mode .quote-form input,
+body.light-mode .quote-form select,
+body.light-mode .quote-form textarea{
+background:#fff;
+}
+
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus{
+border-color:var(--color-acento);
+box-shadow:0 0 0 4px rgba(246,179,52,0.16);
+}
+
+.quote-form textarea{
+resize:vertical;
+min-height:132px;
+}
+
+.full-field,
+.consent-field,
+.form-actions,
+.form-note{
+margin-top:18px;
+}
+
+.consent-field{
+grid-template-columns:auto 1fr;
+align-items:start;
+font-weight:600;
+color:var(--color-muted);
+line-height:1.55;
+}
+
+.consent-field input{
+width:18px;
+height:18px;
+margin-top:2px;
+accent-color:var(--color-primario);
+}
+
+.consent-field a{
+color:var(--color-acento);
+font-weight:800;
+}
+
+.form-actions{
+display:flex;
+gap:14px;
+flex-wrap:wrap;
+}
+
+.form-actions button{
+border:0;
+cursor:pointer;
+font:inherit;
+}
+
+.form-note{
+font-size:0.88rem;
+line-height:1.6;
+color:var(--color-muted);
+}
+
+.quote-panel{
+position:sticky;
+top:118px;
+padding:30px;
+}
+
+.quote-panel h3{
+font-size:1.35rem;
+margin-bottom:12px;
+}
+
+.quote-panel p,
+.quote-panel li{
+font-size:0.98rem;
+line-height:1.65;
+color:var(--color-muted);
+}
+
+.quote-panel ul{
+display:grid;
+gap:12px;
+margin-top:18px;
+padding-left:18px;
+}
+
 .contact{
 padding:110px 20px;
 display:flex;
@@ -558,6 +707,95 @@ gap:8px;
 .copyright{
 font-size:0.9rem;
 opacity:0.78;
+}
+
+.legal-links{
+display:flex;
+justify-content:center;
+gap:18px;
+flex-wrap:wrap;
+margin-top:18px;
+}
+
+.legal-links a{
+color:var(--color-acento);
+font-size:0.9rem;
+font-weight:800;
+text-decoration:none;
+}
+
+.legal-hero{
+padding:150px 20px 70px;
+background:
+linear-gradient(135deg,rgba(7,17,31,0.94),rgba(15,107,179,0.42)),
+url('img/hero.jpg');
+background-size:cover;
+background-position:center;
+text-align:center;
+}
+
+.legal-hero-content{
+max-width:920px;
+margin:0 auto;
+}
+
+.legal-hero h1{
+font-size:clamp(2.1rem,5vw,4rem);
+line-height:1.1;
+margin-bottom:18px;
+}
+
+.legal-hero p{
+font-size:1.05rem;
+line-height:1.75;
+color:#eef4f8;
+}
+
+.legal-content{
+padding:80px 20px 110px;
+}
+
+.legal-card{
+max-width:980px;
+margin:0 auto;
+padding:clamp(28px,5vw,58px);
+}
+
+.legal-card h2{
+font-size:clamp(1.45rem,3vw,2rem);
+line-height:1.25;
+margin:34px 0 12px;
+}
+
+.legal-card h2:first-child{
+margin-top:0;
+}
+
+.legal-card h3{
+font-size:1.08rem;
+margin:22px 0 10px;
+}
+
+.legal-card p,
+.legal-card li{
+font-size:1rem;
+line-height:1.78;
+color:var(--color-muted);
+}
+
+.legal-card ul{
+display:grid;
+gap:10px;
+padding-left:22px;
+margin:12px 0;
+}
+
+.legal-meta{
+padding:16px 18px;
+margin-bottom:26px;
+border-radius:var(--radio);
+background:rgba(246,179,52,0.12);
+border:1px solid rgba(246,179,52,0.24);
 }
 
 .floating-whatsapp{
@@ -688,7 +926,8 @@ transform:translateY(-7px) rotate(-45deg);
 .about-grid,
 .cards,
 .features,
-.testimonial-grid{
+.testimonial-grid,
+.quote-layout{
 grid-template-columns:1fr;
 }
 
@@ -696,6 +935,10 @@ grid-template-columns:1fr;
 .features,
 .testimonial-grid{
 max-width:720px;
+}
+
+.quote-panel{
+position:static;
 }
 }
 
@@ -763,7 +1006,8 @@ padding:78px 18px;
 }
 
 .stats,
-.client-logos{
+.client-logos,
+.form-grid{
 grid-template-columns:1fr;
 }
 
@@ -788,5 +1032,14 @@ width:58px;
 height:58px;
 right:18px;
 bottom:18px;
+}
+
+.form-actions{
+display:grid;
+grid-template-columns:1fr;
+}
+
+.legal-hero{
+padding-top:122px;
 }
 }

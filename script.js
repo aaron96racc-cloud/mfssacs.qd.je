@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const menuButton = document.querySelector(".menu-toggle");
   const nav = document.querySelector(".main-nav");
   const revealElements = document.querySelectorAll(".reveal");
+  const quoteForm = document.getElementById("quote-form");
 
   // Mantiene el modo elegido por el visitante para mejorar la experiencia al volver.
   function setTheme(theme) {
@@ -54,5 +55,38 @@ window.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => observer.observe(element));
   } else {
     revealElements.forEach((element) => element.classList.add("is-visible"));
+  }
+
+  // Convierte el formulario en una solicitud ordenada para atención comercial por WhatsApp.
+  if (quoteForm) {
+    quoteForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      if (!quoteForm.reportValidity()) {
+        return;
+      }
+
+      const data = new FormData(quoteForm);
+      const message = [
+        "Hola, solicito una cotización corporativa:",
+        "",
+        `Empresa: ${data.get("empresa") || "No indicado"}`,
+        `RUC: ${data.get("ruc") || "No indicado"}`,
+        `Contacto: ${data.get("contacto") || "No indicado"}`,
+        `Cargo o área: ${data.get("cargo") || "No indicado"}`,
+        `Teléfono: ${data.get("telefono") || "No indicado"}`,
+        `Correo: ${data.get("email") || "No indicado"}`,
+        `Servicio requerido: ${data.get("servicio") || "No indicado"}`,
+        `Ubicación: ${data.get("ubicacion") || "No indicado"}`,
+        `Prioridad: ${data.get("prioridad") || "No indicado"}`,
+        `Cantidad estimada: ${data.get("cantidad") || "No indicado"}`,
+        "",
+        `Detalle: ${data.get("detalle") || "No indicado"}`,
+        "",
+        "Autorizo el tratamiento de mis datos para atender esta solicitud."
+      ].join("\n");
+
+      window.open(`https://wa.me/51969300563?text=${encodeURIComponent(message)}`, "_blank", "noopener");
+    });
   }
 });
