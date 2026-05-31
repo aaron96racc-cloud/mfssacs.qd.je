@@ -1,62 +1,58 @@
 window.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const toggle = document.getElementById("theme-toggle");
+  const logo = document.getElementById("logo");
+  const footerLogo = document.getElementById("footer-logo");
+  const menuButton = document.querySelector(".menu-toggle");
+  const nav = document.querySelector(".main-nav");
+  const revealElements = document.querySelectorAll(".reveal");
 
-const body = document.body;
-const toggle = document.getElementById("theme-toggle");
-const logo = document.getElementById("logo");
-const footerLogo = document.getElementById("footer-logo");
+  // Mantiene el modo elegido por el visitante para mejorar la experiencia al volver.
+  function setTheme(theme) {
+    const isLight = theme === "light";
 
-function enableDarkMode(){
+    body.classList.toggle("light-mode", isLight);
+    toggle.checked = isLight;
+    logo.src = isLight ? "img/logo-light.png" : "img/logo-dark.png";
+    footerLogo.src = isLight ? "img/logo-light.png" : "img/logo-dark.png";
+    localStorage.setItem("theme", theme);
+  }
 
-body.classList.remove("light-mode");
+  const savedTheme = localStorage.getItem("theme");
+  setTheme(savedTheme === "light" ? "light" : "dark");
 
-toggle.checked = false;
+  toggle.addEventListener("change", () => {
+    setTheme(toggle.checked ? "light" : "dark");
+  });
 
-logo.src = "img/logo-dark.png";
+  // Controla el menú móvil sin bloquear la navegación por anclas.
+  menuButton.addEventListener("click", () => {
+    const isOpen = nav.classList.toggle("is-open");
+    body.classList.toggle("menu-open", isOpen);
+    menuButton.setAttribute("aria-expanded", String(isOpen));
+  });
 
-footerLogo.src = "img/logo-dark.png";
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      body.classList.remove("menu-open");
+      menuButton.setAttribute("aria-expanded", "false");
+    });
+  });
 
-localStorage.setItem("theme","dark");
+  // Activa animaciones suaves cuando cada sección entra en pantalla.
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.16 });
 
-}
-
-function enableLightMode(){
-
-body.classList.add("light-mode");
-
-toggle.checked = true;
-
-logo.src = "img/logo-light.png";
-
-footerLogo.src = "img/logo-light.png";
-
-localStorage.setItem("theme","light");
-
-}
-
-const savedTheme = localStorage.getItem("theme");
-
-if(savedTheme === "light"){
-
-enableLightMode();
-
-}else{
-
-enableDarkMode();
-
-}
-
-toggle.addEventListener("change", () => {
-
-if(toggle.checked){
-
-enableLightMode();
-
-}else{
-
-enableDarkMode();
-
-}
-
-});
-
+    revealElements.forEach((element) => observer.observe(element));
+  } else {
+    revealElements.forEach((element) => element.classList.add("is-visible"));
+  }
 });
