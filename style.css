@@ -12,6 +12,10 @@
 --radio:8px;
 }
 
+html{
+scroll-padding-top:118px;
+}
+
 *{
 margin:0;
 padding:0;
@@ -44,6 +48,39 @@ max-width:100%;
 
 a{
 color:inherit;
+}
+
+.skip-link{
+position:fixed;
+top:12px;
+left:12px;
+z-index:2000;
+padding:12px 16px;
+background:var(--color-acento);
+color:#07111f;
+font-weight:800;
+text-decoration:none;
+border-radius:var(--radio);
+box-shadow:var(--sombra);
+transform:translateY(-140%);
+transition:transform 0.2s ease;
+}
+
+.skip-link:focus{
+transform:translateY(0);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible{
+outline:3px solid var(--color-acento);
+outline-offset:4px;
+}
+
+section[id]{
+scroll-margin-top:118px;
 }
 
 .site-header{
@@ -267,6 +304,10 @@ margin:0 auto 34px;
 color:#e8edf3;
 }
 
+body.light-mode .hero p{
+color:#eef4f8;
+}
+
 .hero-info{
 display:flex;
 justify-content:center;
@@ -356,6 +397,7 @@ margin-bottom:22px;
 .contact-box p,
 .faq-item p,
 .feature-card p,
+.service-list,
 footer p{
 font-size:1.03rem;
 line-height:1.75;
@@ -459,6 +501,33 @@ padding:30px;
 font-size:1.45rem;
 line-height:1.3;
 margin-bottom:14px;
+}
+
+.service-list{
+display:grid;
+gap:8px;
+margin:18px 0 20px;
+padding-left:20px;
+font-size:0.96rem;
+}
+
+.text-link{
+display:inline-flex;
+align-items:center;
+gap:8px;
+color:var(--color-acento);
+font-weight:800;
+text-decoration:none;
+}
+
+.text-link::after{
+content:"→";
+transition:transform 0.2s ease;
+}
+
+.text-link:hover::after,
+.text-link:focus-visible::after{
+transform:translateX(4px);
 }
 
 .clients{
@@ -618,6 +687,16 @@ cursor:pointer;
 font:inherit;
 }
 
+.form-actions .btn-secondary{
+border:1px solid rgba(255,255,255,0.36);
+}
+
+body.light-mode .form-actions .btn-secondary{
+border-color:rgba(20,32,51,0.22);
+color:var(--color-texto);
+background:rgba(20,32,51,0.04);
+}
+
 .form-note{
 font-size:0.88rem;
 line-height:1.6;
@@ -671,6 +750,25 @@ box-shadow:var(--sombra);
 margin:32px 0;
 display:grid;
 gap:8px;
+}
+
+.contact-info a,
+.footer-contact a,
+.legal-card a{
+color:var(--color-acento);
+font-weight:800;
+text-decoration:none;
+}
+
+.contact-info a:hover,
+.footer-contact a:hover,
+.legal-card a:hover,
+.contact-info a:focus-visible,
+.footer-contact a:focus-visible,
+.legal-card a:focus-visible,
+.legal-links a:hover,
+.legal-links a:focus-visible{
+text-decoration:underline;
 }
 
 footer{
@@ -822,12 +920,17 @@ fill:currentColor;
 }
 
 .reveal{
+opacity:1;
+transform:none;
+}
+
+html.js .reveal{
 opacity:0;
 transform:translateY(26px);
 transition:opacity 0.7s ease,transform 0.7s ease;
 }
 
-.reveal.is-visible{
+html.js .reveal.is-visible{
 opacity:1;
 transform:translateY(0);
 }
@@ -858,10 +961,13 @@ scroll-behavior:auto;
 }
 
 .reveal,
+html.js .reveal,
 .hero-content,
 .floating-whatsapp{
 animation:none;
 transition:none;
+opacity:1;
+transform:none;
 }
 }
 
@@ -943,6 +1049,14 @@ position:static;
 }
 
 @media(max-width:640px){
+html{
+scroll-padding-top:96px;
+}
+
+section[id]{
+scroll-margin-top:96px;
+}
+
 .site-header{
 gap:12px;
 }
